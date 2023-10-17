@@ -1,0 +1,62 @@
+{
+  "preamble": {
+    "title": "golddydev/lock-custom-token",
+    "description": "Aiken contracts for project 'golddydev/lock-custom-token'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "lock_custom_token.unlock",
+      "datum": {
+        "title": "datum",
+        "schema": {
+          "$ref": "#/definitions/lock_custom_token~1Datum"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/Data"
+        }
+      },
+      "compiledCode": "59012101000032323232323232322223253330073232323232533300c3370e90010008992999806991991191980080080191299980a8008a501323253330143371e00400a29444cc010010004c060008dd7180b0009bac301230133013301330133013301330133013300c006001375c60226024601601426466446464a66602466e1d20020011337120066eb4c058c040008528180800098019807180198070011809180998099809980998099809980998060031bad3001300c00b2301200114a060140042940c028004c038004c038008c030004c014008526163253330073370e9000000899191919299980718080010a4c2c6eb8c038004c038008dd6980600098028020b1802801918029baa001230033754002ae6955ceaab9e5573eae855d101",
+      "hash": "7bbc6eb3509fc06ac48dd3e69a33bca6fac15f2c2ce30a073dcc4dfb"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "lock_custom_token/Datum": {
+      "title": "Datum",
+      "anyOf": [
+        {
+          "title": "Datum",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "lock_until",
+              "description": "POSIX time in second, e.g. 1672843961000",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "owner",
+              "description": "Owner's credentials",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
